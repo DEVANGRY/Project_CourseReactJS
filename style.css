@@ -1,0 +1,11 @@
+body {
+    text-align: center;
+}
+body hr {
+    width: 960px;
+}
+body .fix_img {
+    width: 480px;
+    height: 480px;
+    display: inline-block;
+}
