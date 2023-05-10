@@ -1,0 +1,24 @@
+.intro {
+    display: flex;
+    background-color: aqua;
+    /* justify-content: space-between; */
+    /* row hướng flex-item theo chiều ngang 
+    columns hướng flex-item theo chiều dọc  */
+}
+.intro .intro_sub {
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    background-color: yellowgreen;
+    border: 1px solid red;
+    text-align: center;
+    margin: 20px;
+}
+.flex_direction {
+    flex-direction: row-reverse;
+}
+.flex_wrap {
+    flex-wrap: wrap;
+}
+/* .flex_wrap .intro_sub {
+} */
