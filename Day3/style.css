@@ -22,3 +22,6 @@
 }
 /* .flex_wrap .intro_sub {
 } */
+.flex_flow {
+    flex-flow: row-reverse wrap;
+}
