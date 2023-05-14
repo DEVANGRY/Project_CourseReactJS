@@ -4,6 +4,8 @@
     /* justify-content: space-between; */
     /* row hướng flex-item theo chiều ngang 
     columns hướng flex-item theo chiều dọc  */
+    gap: 10px 10px;
+    flex-wrap: wrap;
 }
 .intro .intro_sub {
     display: inline-block;
