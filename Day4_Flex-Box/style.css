@@ -1,0 +1,36 @@
+.intro {
+    display: flex;
+    background-color: aqua;
+    /* justify-content: space-between; */
+    /* row hướng flex-item theo chiều ngang 
+    columns hướng flex-item theo chiều dọc  */
+    gap: 10px 10px;
+    /* flex-wrap: wrap; */
+}
+.intro .intro_sub {
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    background-color: yellowgreen;
+    border: 1px solid red;
+    text-align: center;
+    margin: 20px;
+}
+.flex-item .intro_sub:nth-child(4) {
+    flex-grow: 2;
+}
+.flex-shrink .intro_sub:nth-child(4) {
+    flex-shrink: 3;
+    flex-wrap: wrap;
+}
+.flex-basis .intro_sub:nth-child(2) {
+    flex-basis: 300px;
+}
+.intro.align-self {
+    display: flex;
+    align-items: flex-start;
+    height: 400px;
+}
+.align-self .intro_sub:nth-child(3) {
+    align-self: flex-end;
+}

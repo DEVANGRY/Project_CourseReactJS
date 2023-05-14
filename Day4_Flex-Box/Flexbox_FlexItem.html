@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Flex-Box</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <!-- gap -->
+        <pre>
+            gap:
+            + Dùng để căn khoảng cách giữa các item    
+        
+
+        </pre>
+        <div class="intro flex_flow">
+            <div class="intro_sub">1</div>
+            <div class="intro_sub">2</div>
+            <div class="intro_sub">3</div>
+            <div class="intro_sub">4</div>
+            <div class="intro_sub">5</div>
+            <div class="intro_sub">6</div>
+            <div class="intro_sub">1</div>
+            <div class="intro_sub">2</div>
+            <div class="intro_sub">3</div>
+            <div class="intro_sub">4</div>
+            <div class="intro_sub">5</div>
+            <div class="intro_sub">6</div>
+        </div>
+
+        <!-- flex-item -->
+        <pre>
+            Flex-item : áp dụng trong các item con trong content   
+            + order : giá trị mặc định là 0 
+                Dùng để thay đổi thứ tự các item con trong thẻ 
+            + flex-grow : Thuộc tính này xác định tỉ lệ mà các 
+            phần tử con giãn ra trong thẻ cha 
+
+        </pre>
+        <div class="intro flex-item">
+            <div class="intro_sub">1</div>
+            <div class="intro_sub">2</div>
+            <div class="intro_sub" style="order: 1">3</div>
+            <div class="intro_sub">4</div>
+            <div class="intro_sub">5</div>
+            <div class="intro_sub">6</div>
+        </div>
+
+        <!-- flex-shrink  -->
+        <pre>
+            Flex-shrink : Thuộc tính này xác định tỷ lệ mà các phần tử 
+            con co lại trong phần tử cha khi 
+            không có không gian đủ. Nó nhận giá trị số, mặc định là 1.
+
+        </pre>
+        <div class="intro flex-shrink">
+            <div class="intro_sub">1</div>
+            <div class="intro_sub">2</div>
+            <div class="intro_sub">3</div>
+            <div class="intro_sub">4</div>
+            <div class="intro_sub">5</div>
+            <div class="intro_sub">6</div>
+        </div>
+
+        <!-- flex-basis  -->
+        <pre>
+            Flex-shrink : Thuộc tính xác định kích thước ban 
+            đầu của phần tử con trước khi phân bổ không gian 
+            dư thừa .
+        </pre>
+        <div class="intro flex-basis">
+            <div class="intro_sub">1</div>
+            <div class="intro_sub">2</div>
+            <div class="intro_sub">3</div>
+            <div class="intro_sub">4</div>
+            <div class="intro_sub">5</div>
+            <div class="intro_sub">6</div>
+        </div>
+
+        <!-- align-self  -->
+        <pre>
+            align-self : Thuộc tính này điều chỉnh căn 
+            dọc của phần tử con cụ thể bên trong thẻ 
+            cha . Thuộc tính này ghi đè lên thuộc tính 
+            align-items 
+        </pre>
+        <div class="intro align-self">
+            <div class="intro_sub">1</div>
+            <div class="intro_sub">2</div>
+            <div class="intro_sub">3</div>
+            <div class="intro_sub">4</div>
+            <div class="intro_sub">5</div>
+            <div class="intro_sub">6</div>
+        </div>
+    </body>
+</html>
