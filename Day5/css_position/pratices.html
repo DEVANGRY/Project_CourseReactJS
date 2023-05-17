@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            .container {
+                margin: auto;
+                border: 2px solid;
+                width: 300px;
+                height: 200px;
+                position: relative;
+            }
+            .child1 {
+                width: 50px;
+                height: 100%;
+                background-color: blue;
+                position: absolute;
+                top: 0;
+                left: 80px;
+            }
+            .child2 {
+                position: absolute;
+                background-color: blue;
+                width: 100%;
+                top: 70px;
+                height: 40px;
+            }
+            h2 {
+                margin-left: 50px;
+            }
+            .national {
+                margin: auto;
+
+                position: relative;
+                margin-top: 20px;
+                border: 2px solid;
+                width: 350px;
+                height: 200px;
+            }
+            .sub_national_UAE .box1 {
+                width: 80px;
+                position: absolute;
+                height: 100%;
+                background-color: red;
+                z-index: 1;
+            }
+            .sub_national_UAE .box2 {
+                width: 100%;
+                height: calc(100% / 3);
+                background-color: green;
+                position: absolute;
+            }
+            .sub_national_UAE .box3 {
+                width: 100%;
+                height: calc(100% / 3);
+                background-color: black;
+                position: absolute;
+                bottom: 0;
+            }
+            .sub_national_Canada .box1,
+            .sub_national_Canada .box2 {
+                width: 25%;
+                height: 100%;
+                background-color: #d62718;
+                position: absolute;
+            }
+            .sub_national_Canada .box2 {
+                top: 0;
+                left: 75%;
+            }
+            .maple {
+                font-size: 90px;
+                color: #d62718;
+                position: absolute;
+                top: calc(50% - 90px / 2);
+                left: calc(50% - 90px / 2);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="child1"></div>
+            <div class="child2"></div>
+        </div>
+        <div class="sub_national_UAE">
+            <h2>National UAE</h2>
+            <div class="national">
+                <div class="box1"></div>
+                <div class="box2"></div>
+                <div class="box3"></div>
+            </div>
+        </div>
+
+        <div class="sub_national_Canada">
+            <h2>National Canada</h2>
+            <div class="national">
+                <div class="box1"></div>
+                <div class="box2"></div>
+                <i class="maple fa-brands fa-canadian-maple-leaf"></i>
+            </div>
+        </div>
+    </body>
+</html>
