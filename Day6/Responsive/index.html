@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .container {
+                width: 400px;
+                height: 400px;
+                background-color: aqua;
+            }
+            @media screen and(max-width : 525px) {
+                /* responsive css sẽ được thay đổi thuộc tính từ độ dài 0 đến 525px */
+                .container {
+                    background-color: yellow;
+                }
+            }
+
+            @media screen and (min-width: 600px) and (max-width: 1000px) {
+                /* responsive css sẽ được thay đổi thuộc tính từ độ dài 600px đến 1000px */
+
+                .container {
+                    background-color: rgb(33, 24, 8);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container"></div>
+        <script src="./main.js"></script>
+    </body>
+</html>
