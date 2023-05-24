@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Caculate Simple</h1>
+
+            <div>
+                <label for="">Nhập số A</label>
+                <input type="text" name="number_1" placeholder="0" id="a" />
+            </div>
+
+            <div>
+                <label for="">Nhập số B</label>
+                <input type="text" name="number_2" placeholder="0" id="b" />
+            </div>
+            <button
+                onclick="
+            var a = document.getElementById('a').value;
+            var b = document.getElementById('b').value;
+            a= parseFloat(a);
+            b= parseFloat(b);
+            document.getElementById('result').innerText =  'Sum ' + calc(a,b,'+')"
+                ;
+            >
+                +
+            </button>
+            <button
+                onclick="
+           var a = document.getElementById('a').value;
+            var b = document.getElementById('b').value;
+            a= parseFloat(a);
+            b= parseFloat(b);
+             document.getElementById('result').innerText = ' Mul ' + calc(a,b,'-')"
+                ;
+            >
+                -
+            </button>
+            <button
+                onclick="
+                var a = document.getElementById('a').value;
+            var b = document.getElementById('b').value;
+            a= parseFloat(a);
+            b= parseFloat(b);
+             document.getElementById('result').innerText = 'Multi' + calc(a,b,'*')"
+                ;
+            >
+                *
+            </button>
+            <button
+                onclick="
+                var a = document.getElementById('a').value;
+            var b = document.getElementById('b').value;
+            a= parseFloat(a);
+            b= parseFloat(b);
+             document.getElementById('result').innerText = 'Dec' + calc(a,b,'/')"
+                ;
+            >
+                /
+            </button>
+
+            <div id="result">Kết quả ?</div>
+        </div>
+
+        <script>
+            let calc = (x, y, op) => {
+                let t = 0;
+                if (op == "+") {
+                    t = x + y;
+                } else if (op == "-") {
+                    t = x - y;
+                } else if (op == "*") {
+                    t = x * y;
+                } else if (op == "/") {
+                    t = x / y;
+                }
+                return t;
+            };
+        </script>
+    </body>
+</html>
