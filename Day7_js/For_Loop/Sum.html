@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <pre>
+        Tính tổng các số từ 1 đến N ;
+        Ví dụ tính tổng các số từ 1 đến N ;
+        t = 1+2+3+...+N
+    </pre
+        >
+        <div>
+            <label for="">Enter the number </label>
+            <input type="text" placeholder="number..." id="display" />
+            <button
+                id="result"
+                onclick="Sum(document.getElementById('display').value)"
+            >
+                Result
+            </button>
+            <p id="equal"></p>
+        </div>
+        <p id="result"></p>
+        <script>
+            var displayNumber = document.getElementById("display").value;
+            var number = parseInt(displayNumber);
+            Sum = (x) => {
+                let Sum = 0;
+                for (let i = 0; i <= x; i++) {
+                    Sum += i;
+                }
+                return Sum;
+            };
+            document.getElementById("equal").innerText = Sum(number);
+        </script>
+    </body>
+</html>

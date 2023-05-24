@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h2>Chọn ngày tháng năm sinh</h2>
+        Ngày
+        <select id="date"></select>
+        Tháng
+        <select id="month"></select>
+        Năm
+        <select id="year"></select>
+
+        <script>
+            for (let i = 1; i <= 31; i++) {
+                document.getElementById(
+                    "date"
+                ).innerHTML += `<option value=${i}>ngày ${i}</option>`;
+            }
+
+            for (let i = 1; i <= 12; i++) {
+                document.getElementById(
+                    "month"
+                ).innerHTML += `<option value=${i}>Tháng ${i}</option>`;
+            }
+            for (let i = 1900; i <= 2023; i++) {
+                document.getElementById(
+                    "year"
+                ).innerHTML += `<option value=${i}>Năm ${i}</option>`;
+            }
+        </script>
+    </body>
+</html>
