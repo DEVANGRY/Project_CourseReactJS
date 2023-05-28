@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <pre>
+        Mảng array trong js 
+        String , number , boolean (true or false ) , object(thuộc tính)
+        Kiểu mảng chứa được nhiều giá trị .
+    </pre
+        >
+        <input type="text" id="demo" placeholder="..." value="HaNoiHoChiMinh" />
+        <button onclick="handleSlice()">Slice String</button>
+        <script>
+            let t = [2, 4, 6, 8, 10];
+            let phone = ["apple", "samsung", "xiaomi"];
+            let g = [{ name: "a", agr: 18 }, t, phone, true];
+
+            // thêm các giá trị mới vào bảng
+            phone[3] = "vivo";
+
+            // Thêm 1 cách tạo mảng
+            var number = new Array(1, 2, 3, 4, 5);
+
+            // truy cập 1 phần tử bên trong mảng thông qua index
+            document.write(`<div>${phone[1]}</div>`);
+
+            // Lấy ra độ dài của 1 mảng
+            document.write(
+                `<div>Độ dài của mảng phone : ${phone.length}</div>`
+            );
+
+            // dùng vòng lặp để duyệt mảng
+            document.write("<ul>");
+            for (let i = 0; i < phone.length; i++) {
+                document.write(`<li>${phone[i]}</li>`);
+            }
+            document.write("</ul>");
+
+            // handle array
+
+            let handleSlice = () => {
+                let demoVal = document.getElementById("demo").value;
+                var target = demoVal.slice(0, 5);
+                alert(target);
+            };
+        </script>
+    </body>
+</html>
