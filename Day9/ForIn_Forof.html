@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <pre>
+        + Vòng lặp for in dùng để duyệt qua các phần tử trong object;
+
+        + Vòng lặp for of dùng để duyệt qua các phần tử trong array hoặc có thể duyệt qua hết các phần tử trong một chuỗi ;
+        for (variable of iterable) {
+            // code block to be executed
+          }
+        + Vòng lặp for each duyệt qua từng phần tử mảng trong array;
+        forEach trong js 
+        array.forEach(myFunction);
+        function myFunction(value,index,array){
+            console.log({value : value});
+            console.log({value});
+        }
+    </pre
+        >
+        <script>
+            let person = {
+                name: "Jon",
+                age: 20,
+                adder: "Italia",
+            };
+            for (const key in person) {
+                console.log(key + " : " + person[key]);
+            }
+            let arr = [1, 2, 5, 67, 7, 123, 4, 1234];
+            arr.forEach((value, index) => {
+                console.log({ [index]: value });
+            });
+
+            var alpha = ["A", "B", "C", "D"];
+            for (let value of alpha) {
+                document.write("<br>" + value);
+            }
+        </script>
+    </body>
+</html>

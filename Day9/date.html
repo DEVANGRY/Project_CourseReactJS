@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <pre>
+           *  Thời gian trong js 
+            Tháng trong js bắt đầu từ 0 đến 11 ;
+            Có 2 định dạnh thời gian 
+            + Loại 1 : có thể đọc hiểu được 
+            + Loại 2 : TimeStamp (được dùng để tính toán)
+            Tính số mili giây từ 1 tháng 1 năm 1970 
+
+
+           *  Các phương thức get và set trong thời gian: 
+           + get lấy các số liệu thực tại 
+           + set để cài đặt số liệu 
+    </pre
+        >
+        <script>
+            let x = new Date();
+            console.log(x);
+            document.write(x);
+
+            // new Date(year,month,day,hours,minutes,seconds)
+            let y = new Date(2015, 5, 21, 10, 24, 20);
+            document.write("<br>" + y);
+
+            let z = new Date(2025, 1, 21, 12, 21, 30);
+            document.write("<br>" + z);
+
+            // Tính xem thời gian còn lại cho đến tết của 2024
+            // Quy đổi ra ngày tháng , năm
+            let d1 = new Date(2024, 0, 1, 0, 0, 0);
+            let d2 = new Date();
+
+            document.write("<br>" + d1.getTime());
+            document.write("<br>" + d2.getTime());
+            var d3 = d1 - d2;
+            document.write("<br> khoảng cách thời gian : " + d3);
+            // 1s = 1000s
+
+            // quy đổi số ms này ra tháng ? ngày ? giờ ? phút ?
+            var remain = d3;
+            var m = parseInt(remain / (30 * 24 * 60 * 60 * 1000));
+            document.write("<br> tháng : " + m);
+            remain = d3 - 30 * 24 * 60 * 60 * 1000 * m;
+
+            var d = parseInt(remain / (24 * 60 * 60 * 1000));
+            document.write("<br> ngày : " + d);
+
+            document.write("<br> Month : " + (d2.getMonth() + 1));
+            document.write("<br> Day : " + d2.getDate());
+            document.write("<br> Houres : " + d2.getHours());
+        </script>
+    </body>
+</html>

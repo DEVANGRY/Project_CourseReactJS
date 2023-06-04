@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            tr,
+            td {
+                border: 2px solid saddlebrown;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr id="head_table"></tr>
+            </thead>
+            <tbody id="body_table"></tbody>
+        </table>
+        <script>
+            let person = {
+                name: "Jane",
+                age: 20,
+                sex: "male",
+                addrres: "US",
+                phoneNumber: 1111111111,
+            };
+            let head_Table = document.getElementById("head_table");
+            head_Table.innerHTML = `<td>Number</td>
+                <td>Title</td>
+                <td>delta</td>
+                `;
+
+            let body_Table = document.getElementById("body_table");
+            let i = 1;
+            for (const key in person) {
+                body_Table.innerHTML += `<tr>
+                    <td>${i}</td>
+                    <td>${key}</td>
+                    <td>${person[key]}</td> 
+                    </tr>`;
+                i++;
+            }
+        </script>
+    </body>
+</html>
