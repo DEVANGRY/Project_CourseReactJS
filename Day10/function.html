@@ -8,19 +8,28 @@
     </head>
     <body>
         <script>
-            function demo() {
-                let title = "Hello World";
-                return title;
-            }
-            let demo2 = () => {
-                return "hello world";
-            };
-            let demo3 = function () {
-                return "Good Day sir;";
+            // chuyển cú pháp từ hàm thông thường
+            // sang hàm mũi tên
+
+            // bước 1 - bỏ từ khóa function
+            // bước 2 - giữ lại () và thêm 1 mũi tên => sau ()
+
+            demo = function () {
+                document.write("hàm demo regular");
             };
 
-            let sum = (a, b) => {
-                a + b;
+            // -> arrow function
+            target = () => {
+                document.write("hàm target mũi tên");
+            };
+
+            getCode = function () {
+                return "func getCode";
+            };
+
+            // -> arrow function
+            getCode2 = () => {
+                return "func getCode2";
             };
         </script>
     </body>
