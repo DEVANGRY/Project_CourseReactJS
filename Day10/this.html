@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <pre>
+        
+        1. In an object method, this refers to the object.
+        trong 1 phương thức của object , từ khóa this đại diện cho object đó 
+        2 . Alone, this refers to the global object.
+        Một mình, từ khóa this đại diện global object 
+        3. Từ khóa dữ liệu trong event handler 
+        xử lí sự kiện được gắn vào 1 thẻ html. 
+            + nó sẽ chính là bản thân thẻ được gán sự kiện
+    </pre
+        >
+        <button onclick="console.log(this)">Nút demo</button>
+        <script>
+            console.log(this);
+            ("use strict");
+            function myFunction() {
+                // từ khóa this ở trong function là gì
+                console.log(this);
+                // this là  global object window
+                return this;
+            }
+            // gọi hàm
+            myFunction();
+        </script>
+    </body>
+</html>
