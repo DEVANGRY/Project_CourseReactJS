@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <pre>
+            -- Bộ chọn theo tên thẻ 
+            -- Bộ chọn theo Id
+            -- Bộ chọn theo class
+        </pre>
+
+        <div class="target1">
+            Thẻ div số 1
+            <div class="sub_target1">Thẻ con của thẻ 1</div>
+        </div>
+        <div class="target1">Thẻ div số 2</div>
+        <div class="target1">Thẻ div số 3</div>
+        <span>Thẻ div 4</span>
+        <span>Thẻ div 5</span>
+        <a href="https://www.w3schools.com/js/js_htmldom_methods.asp"
+            >w3schools</a
+        >
+        <a
+            href="https://github.com/dathalongbay/react-t2/blob/main/code/d11/index1a.html"
+            >git</a
+        >
+        <button id="changeW3">Thay đổi href của w3schools</button>
+        <button id="changeGit">Thay đổi href của git</button>
+        <script>
+            //
+            //Bộ chọn theo class của js
+            let targetHtml = document.getElementsByClassName("target1");
+            // Kiểu dữ liệu trả về gần giống như mảng
+            console.log(targetHtml);
+            // selector.style.{Tên thuộc tính css}
+            targetHtml[0].style.color = "red";
+            targetHtml[1].style.color = "green";
+            targetHtml[1].style.margin = "20px";
+            targetHtml[2].style.color = "orange";
+            targetHtml[2].style.backgroundColor = "pink";
+            targetHtml[2].style.fontSize = "20px";
+
+            //Bộ chọn theo tên thẻ của js
+            let spanHtml = document.getElementsByTagName("span");
+            let aHtml = document.getElementsByTagName("a");
+            console.log({ spanHtml });
+            spanHtml[0].style.display = "inline-block";
+            spanHtml[0].style.padding = "10px";
+            //Muốn lấy tên thuộc tính của thẻ có thẻ dùng bộ chọn sau đó . đến
+            // Thuộc tính của thẻ
+            console.log(aHtml[0].href);
+
+            //Thay đổi giá trị thuộc tính của thẻ trong Dom
+            //Cách 1
+            document.getElementById("changeW3").onclick = function () {
+                aHtml[0].href = "https://www.facebook.com/";
+                aHtml[0].innerHTML = "Facebook";
+            };
+            //Cách 2
+            document.getElementById("changeGit").onclick = function () {
+                aHtml[1].setAttribute("href", "https://www.youtube.com/");
+                aHtml[1].innerHTML = "Youtube";
+            };
+
+            // Bộ chọn js dựa vào selector css
+            // querySelector() Trả về thành phần đầu tiên mà nó tìm được
+            // nếu là id thì #{name}, là class thì .{name}
+            let demo1 = document.querySelector(".target1 .sub_target1");
+            console.log(demo1);
+            // querySelectorAll() Trả về toàn bộ các thành phần trong nodeList
+            let demo2 = document.querySelectorAll("div");
+            console.log(demo2);
+        </script>
+    </body>
+</html>

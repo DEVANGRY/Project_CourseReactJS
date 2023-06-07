@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="demo"></div>
+        <script>
+            class Car {
+                constructor(brand) {
+                    this.carname = brand;
+                }
+                present() {
+                    return "I have a " + this.carname;
+                }
+            }
+
+            class Model extends Car {
+                constructor(brand, mod) {
+                    super(brand); //Gọi đến constructor cha
+                    this.model = mod;
+                }
+            }
+
+            //Khởi tạo class
+            let myCar = new Model("john", "Anna");
+            document.getElementById("demo").innerHTML = myCar.present();
+        </script>
+    </body>
+</html>

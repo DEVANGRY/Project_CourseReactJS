@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <pre>
+        Class trong js
+    </pre
+        >
+        <script>
+            class Car {
+                constructor(name, year) {
+                    this.name = name;
+                    this.year = year; // Từ khóa this đại diện cho chính class đó
+                }
+                getInfo() {
+                    return `
+                <div>Tên ô tô : ${this.name}</div>
+                <div>Năm sản xuất ô tô : ${this.year}</div>
+                `;
+                }
+            }
+            let vinfat = new Car("vinfat", 2003);
+            let html = vinfat.getInfo();
+            document.write(html);
+        </script>
+    </body>
+</html>

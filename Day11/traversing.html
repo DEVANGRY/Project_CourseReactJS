@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="parentDemo">
+            <a href="https://www.google.com/" class="nav">Google</a>
+            <a href="https://www.youtube.com/" class="nav" id="tagert1"
+                >Youtube</a
+            >
+            <a href="https://www.facebook.com/" class="nav">Facebook</a>
+        </div>
+
+        <button id="action1">Click</button>
+        <script>
+            //dom.parentNode để chon thẻ cha
+            document.getElementById("action1").onclick = function () {
+                let parentDemo = document.querySelector(".nav").parentNode;
+                console.log(parentDemo);
+                parentDemo.style.margin = "50px";
+                parentDemo.style.backgroundColor = "red";
+            };
+            // để lấy ra các thẻ con
+            // Có 2 cách :
+            // + childNodes : dùng childNodes sẽ in ra cả dấu cách trong đoạn code Html
+            // + children : in ra nguyên các thẻ con
+            let parent = document.querySelector(".parentDemo");
+            let child = parent.childNodes;
+            console.log(child);
+            let children = parent.children;
+            console.log(children);
+
+            //Thuộc tính firstChild hoặc lastChild
+            //Chả về con đầu tiên hoặc con cuối cùng bất kể child đó có node type là gì
+            //Kể cả khoảng trắng hay kí tự xuống hàng .
+            let firstchilde = parent.firstChild;
+            console.log(firstchilde);
+
+            // firstElementChild hoặc lastElementChild trả về thẻ con html thật
+            // đầu tiên hoặc cuối cùng trong thẻ cha
+            let firstElChild = parent.firstElementChild;
+            console.log(firstElChild);
+
+            // Thuộc tính siblings : anh , chị , em
+            let tagert1Html = document.getElementById("tagert1");
+            //Lấy ra thẻ trước nó (previous)
+            let pre = tagert1Html.previousElementSibling;
+            console.log(pre);
+            //Lấy ra thẻ sau nó (next)
+            let next = tagert1Html.nextElementSibling;
+            console.log(next);
+        </script>
+    </body>
+</html>
