@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>JavaScript DOM - after()</h1>
+        <div id="target"></div>
+        <script>
+            let h1 = document.querySelector("h1");
+            console.log(h1);
+            let p = document.createElement("p");
+            p.innerText =
+                "Thẻ P thêm vào sau thẻ h1 thì dùng phương thức after.";
+            h1.after(p); // thêm 1 thẻ vào dưới một thẻ khác
+            let target = document.querySelector("#target");
+            let a = document.createElement("a");
+            a.innerText = "Google.com";
+            a.setAttribute("href", "google.com"); // Cái đặt thêm thuộc tính trong thẻ
+            target.append(a); // Thêm thành phần thẻ vào trong một thẻ khác
+
+            let h2 = document.createElement("h2");
+            h2.innerText = "Create element perpend()";
+            h1.prepend(h2); // thêm 1 thẻ vào trước bên trong một thẻ khác
+        </script>
+    </body>
+</html>

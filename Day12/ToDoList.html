@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <style>
+            #list-task {
+                margin-top: 10px;
+            }
+            .item-task {
+                padding: 10px;
+                border-bottom: 1px solid gray;
+                margin-bottom: 10px;
+            }
+            .done-task {
+                margin-right: 30px;
+            }
+            .close-task {
+                padding-right: 40px;
+            }
+            .checkDone {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page-wrap">
+            <h2>Các công việc cần làm (Todo app)</h2>
+
+            <!-- nhập task mới -->
+            <input
+                type="text"
+                name="new_task"
+                id="new-task"
+                placeholder="Nhập task mới"
+            />
+            <button id="add-new-task">Thêm task mới vào danh sách</button>
+
+            <!-- Danh sách các công việc -->
+            <div id="list-task">
+                <div class="item-task">
+                    <!-- <span class="done-task"
+                        ><i class="fa-solid fa-check"></i
+                    ></span> -->
+                    Đánh răng
+                    <span class="close-task">
+                        <i class="fa-solid fa-xmark"></i>
+                    </span>
+                </div>
+                <div class="item-task">
+                    Rửa mặt
+                    <span class="close-task">
+                        <i class="fa-solid fa-xmark"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script>
+            let input = document.querySelector("#new-task");
+            let btnAdd = document.querySelector("#add-new-task");
+            let listTask = document.querySelector("#list-task");
+            let itemTask = document.querySelectorAll(".item-task");
+
+            btnAdd.addEventListener("click", function () {
+                handleAdd();
+                closeTask = document.querySelectorAll(".close-task");
+            });
+            let handleAdd = () => {
+                if (input.value === "") {
+                    alert("The task need String");
+                } else {
+                    let newTaskElement = document.createElement("div");
+                    newTaskElement.classList.add("item-task");
+                    newTaskElement.innerHTML = `
+
+                    ${input.value}
+                    <span class="close-task">
+                        <i class="fa-solid fa-xmark"></i>
+                    </span>`;
+                    listTask.appendChild(newTaskElement);
+                    input.value = "";
+
+                    let closeTask = document.querySelectorAll(".close-task");
+                    for (let i = 0; i < closeTask.length; i++) {
+                        closeTask[i].addEventListener("click", function () {
+                            // lấy thẻ cha của thẻ span close task
+                            // this đại diện cho nút được bấm vào
+                            var taskParrEle = closeTask[i].parentElement;
+                            taskParrEle.remove();
+                        });
+                    }
+                    itemTask = document.querySelectorAll(".item-task");
+                    for (let i = 0; i < itemTask.length; i++) {
+                        itemTask[i].addEventListener("click", function (e) {
+                            this.classList.toggle("checkDone");
+                            let checkTaskDone =
+                                this.classList.contains("checkDone");
+
+                            if (checkTaskDone) {
+                                let doneTask = document.createElement("span");
+                                doneTask.classList.add("done-task");
+                                let iconDone = document.createElement("i");
+                                iconDone.classList.add("fa-solid", "fa-check");
+                                doneTask.appendChild(iconDone);
+                                this.prepend(doneTask);
+                            } else {
+                                for (const key in this.childNodes) {
+                                    console.log(this.childNodes[key]);
+                                    if (
+                                        this.childNodes[key].nodeName == "SPAN"
+                                    ) {
+                                        if (
+                                            this.childNodes[
+                                                key
+                                            ].classList.contains("done-task")
+                                        ) {
+                                            this.childNodes[key].remove();
+                                        }
+                                    }
+                                }
+                            }
+                        });
+                    }
+                }
+
+                // add done task
+            };
+            for (let i = 0; i < itemTask.length; i++) {
+                itemTask[i].addEventListener("click", function () {
+                    this.classList.toggle("checkDone");
+                    let checkTaskDone = this.classList.contains("checkDone");
+
+                    if (checkTaskDone) {
+                        let doneTask = document.createElement("span");
+                        doneTask.classList.add("done-task");
+                        let iconDone = document.createElement("i");
+                        iconDone.classList.add("fa-solid", "fa-check");
+                        doneTask.appendChild(iconDone);
+                        this.prepend(doneTask);
+                    } else {
+                        for (const key in this.childNodes) {
+                            console.log(this.childNodes[key]);
+
+                            if (this.childNodes[key].nodeName == "SPAN") {
+                                if (
+                                    this.childNodes[key].classList.contains(
+                                        "done-task"
+                                    )
+                                ) {
+                                    this.childNodes[key].remove();
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

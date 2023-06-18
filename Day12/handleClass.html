@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .banner {
+                border: 2px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="menu" class="vertical">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <button id="add">add</button>
+        <button id="remove">remove</button>
+        <button id="replace">replace</button>
+        <button id="container">Check container</button>
+        <script>
+            let menu = document.querySelector("#menu");
+            console.log(menu.className);
+            console.log(menu.classList);
+            let btn = document.querySelector("button");
+            btn.addEventListener("click", function () {
+                handleChange();
+            });
+            handleChange = () => {
+                menu.classList.toggle("banner");
+                // Thêm một class mới thêm vào attrib.
+                // add : Thêm class mới
+                // remove: xóa class
+                // replace("gốc ","thay thế"): thay thế
+                //toggle() : công tắc Nếu có class đó rồi thì bỏ đi , Nếu chưa có thì thêm vào
+                // container() : Kiểm tra xem có tồn tại một class ko.
+            };
+            let checkContainer = document.querySelector("#container");
+            checkContainer.addEventListener("click", function () {
+                handleContainer();
+            });
+            handleContainer = () => {
+                let check1 = menu.classList.contains("banner");
+                alert(check1);
+            };
+        </script>
+    </body>
+</html>
