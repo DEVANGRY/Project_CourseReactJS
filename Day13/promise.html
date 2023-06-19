@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <pre>
+        promise : Lời hứa
+
+        Tại sao dùng promise : 
+            + Callback dùng để giải quyết bài toàn chạy tuần tự trong js khi 1 dòng lệnh bị thực hiện quá lâu 
+            + Promise dùng để để giải quyết bài toán chạy tuần tự trong js . Dùng nhiều khi gọi đến API 
+            để trả về kết quả . Ví dụ app in ra thời tiết cho người dùng Thì cần gọi đến api để in ra thời tiết hôm nay 
+            Thì ta dùng myResole để trả về thông tin thời tiết 
+
+            + Nhưng ko may mất mạng hoặc serverr openweathermap lỗi không gọi được api trả ra thì gọi đến myReject
+             để trả ra một thông báo lỗi 
+    </pre
+        >
+        <script>
+            // Tạo ra 1 số từ 1 đến 20
+
+            // Chẵn , lẻ
+
+            let xucXac = new Promise(function (myResole, myReject) {
+                // myResole thành công
+                // myReject thất bại
+
+                let x = Math.floor(Math.random() * 10);
+                if (x % 2 == 0) {
+                    console.log(x);
+                    myResole({ name: "Nguyen van a", age: 24 });
+                } else {
+                    console.log(x);
+                    myReject({ error: 1, message: "Thất bại" });
+                }
+            });
+
+            // In ra kết quả
+            xucXac.then(
+                function (result) {
+                    //Hàm đầu tiên được gọi khi myResolve được trả ra bởi Promise
+                    console.log("Thành công", result);
+                },
+                function (err) {
+                    //Hàm đầu tiên được gọi khi myReject được trả ra bởi promise
+                    console.log("Thất bại", err);
+                }
+            );
+        </script>
+    </body>
+</html>

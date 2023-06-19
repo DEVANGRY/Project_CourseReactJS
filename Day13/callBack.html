@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <pre>
+        Callback là 1 hàm truyền vào như 1 đối số cho 1 function khác .
+        function test(x,y,callBack){
+            // myCallback truyền vào là 1 function myCallback();
+        }
+
+         Phải sử dụng callback vì js chạy từ trên xuống dưới 
+         nhưng có 1 số hàm và 1 số lệnh thưc hiện lâu hơn bình thường (setTimeout,call API cần 
+         1 thời gian để trả về , đọc 1 file có dung lượng lớn từ 100mb đến 1Gb)
+    </pre
+        >
+        <h1 id="target"></h1>
+        <script>
+            function myDisplayer(some) {
+                document.getElementById("target").innerHTML = some;
+            }
+            let sumCalc = (x1, x2, displayCallback) => {
+                setTimeout(function () {
+                    let total = x1 + x2;
+                    displayCallback(total);
+                }, 3000);
+            };
+            sumCalc(5, 2, myDisplayer);
+        </script>
+    </body>
+</html>
